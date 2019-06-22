@@ -1,0 +1,37 @@
+.app{
+    
+}
+.search input{
+    width: 100%;
+}
+.user-info {
+    position: relative;
+}
+.user-info img {
+    margin: 20px;
+    max-width: 200px;
+}
+.username {
+    position: relative;
+    left: 250px;
+    bottom: 200px;
+}
+
+.repos-info{
+    position: relative;
+    font-size: 20px;    
+    left: 250px;
+    bottom: 200px;
+}
+
+.actions button{
+    font-size: 20px;
+    position: relative;
+    bottom: 150px;
+    width: 300px;
+    height: 50px;
+    margin: 3px;
+}
+.repos{
+    margin-top: -150px;
+}
