@@ -9,18 +9,22 @@ const App = () => (
         <Search />
         <UserInfo />
         <Actions />
-        <Repos className="repos" title="Alo"
-        repos={[{name:'Nome do repositorio',
-        link: "#"}]} />      
-
-        
-        <div className='starred'>
-            <h2>Favoritos:</h2>
-            <ul>
-                <li > <a href="#"> Nome Repo</a></li>
-                <li > <a href="#"> Nome Repo</a></li>
-            </ul>
-        </div>
+        <Repos
+            className="repos"
+            title="REPOSITORIOS"
+            repos={[{
+                name: 'Nome do repositorio',
+                link: "#"
+            }]}
+        />
+        <Repos
+            className="starred"
+            title="FAVORITOS"
+            repos={[{
+                name: 'Nome do repositorio',
+                link: "#"
+            }]}
+        />
     </div>
 )
 

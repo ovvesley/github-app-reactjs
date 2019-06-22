@@ -16,13 +16,13 @@ const Repos = ({ className, title, repos }) => (
 ) 
 
 Repos.defaultProps={
-    className = '',
+    className : ''
 }
 
 Repos.propTypes = {
-    className : React.propTypes.string,
-    title: React.propTypes.string.isRequired,
-    repos: React.propTypes.array
+    className : React.PropTypes.string,
+    title: React.PropTypes.string.isRequired,
+    repos: React.PropTypes.array
 }
 
 
