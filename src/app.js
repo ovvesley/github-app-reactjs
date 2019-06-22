@@ -7,22 +7,9 @@ class App extends Component {
     constructor() {
         super()
         this.state = {
-            userinfo: {
-                username: 'Wesley',
-                repos: 20,
-                img: 'https://avatars2.githubusercontent.com/u/12123871?v=4',
-                login: 'vvesly',
-                followers: 10,
-                following: 10,
-            },
-            repos: [{
-                name: 'Repo',
-                link: '#'
-            }],
-            starred: [{
-                name: 'Repo',
-                link: '#'
-            }]
+            userinfo: null,
+            repos: [],
+            starred: []
 
         }
     }
@@ -34,7 +21,16 @@ class App extends Component {
             console.log(value)
             ajax().get(`https://api.github.com/users/${value}`)
                 .then((result) => {
-                    console.log(result)
+                    this.setState({
+                        userinfo: {
+                            username: result.name,
+                            img: result.avatar_url,
+                            login: result.login,
+                            repos: result.public_repos,
+                            followers: result.followers,
+                            following: result.following
+                        }
+                    })
                 })
         }
     }
