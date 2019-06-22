@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 
 
 
-const App = () =>{
-    
+const App = () => {
+
 }
 
 export default App
