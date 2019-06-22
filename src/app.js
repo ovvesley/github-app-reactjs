@@ -9,7 +9,9 @@ const App = () => (
         <Search />
         <UserInfo />
         <Actions />
-        <Repos className="repos" title="Alo" />      
+        <Repos className="repos" title="Alo"
+        repos={[{name:'Nome do repositorio',
+        link: "#"}]} />      
 
         
         <div className='starred'>
