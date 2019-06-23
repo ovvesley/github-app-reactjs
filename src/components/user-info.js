@@ -17,9 +17,14 @@ const UserInfo = ({ userinfo }) => (
 
     </div>
 )
+UserInfo.defaultProps = {
+    userinfo: {
+        username: 'Nomenãodefinido',
+    }    
+}; 
 UserInfo.propTypes = {
     userinfo: PropTypes.shape({
-        username: PropTypes.string.isRequired,
+        username: PropTypes.string,
         repos: PropTypes.number.isRequired,
         img:PropTypes.string.isRequired,
         login: PropTypes.string.isRequired,
@@ -27,6 +32,7 @@ UserInfo.propTypes = {
         following: PropTypes.number.isRequired
     })
 }
+
 
 
 export default UserInfo
