@@ -53,6 +53,23 @@ class App extends Component {
         })
     }
 
+    getStarred(e){
+        ajax().get(`https://api.github.com/users/${this.state.userinfo.login}/starred`)
+        .then((result) => {
+            let reposArray = new Array();
+            result.forEach(element => {
+                let {name, html_url} = element
+                let repo = {
+                    name,
+                    link : html_url
+                }
+                reposArray.push(repo)                                             
+            });
+            this.setState({
+                repos: reposArray
+            })
+        })
+    }
 
 
 
@@ -63,7 +80,7 @@ class App extends Component {
             starred={this.state.starred}
             handleSearch={(e) => this.handleSearch(e)}
             getRepositories={(e) =>this.getRepositories(e)}
-            
+            getStarred={(e) => this.getStarred(e)}
         />
     }
 }
