@@ -18,7 +18,6 @@ class App extends Component {
         const keyCode = e.which || e.keyCode
         const ENTER = 13
         if (keyCode === ENTER) {
-            console.log(value)
             ajax().get(`https://api.github.com/users/${value}`)
                 .then((result) => {
                     this.setState({
@@ -35,13 +34,36 @@ class App extends Component {
         }
     }
 
+    getRepositories(e){
+        ajax().get(`https://api.github.com/users/${this.state.userinfo.login}/repos`)
+        .then((result) => {
+            let reposArray = new Array();
+            result.forEach(element => {
+                let {name, html_url} = element
+                let repo = {
+                    name,
+                    link : html_url
+                }
+                reposArray.push(repo)                                              
+            });
+
+            this.setState({
+                repos: reposArray
+            })
+        })
+    }
+
+
+
+
     render() {
-        console.log(this.state.repos)
         return <AppContent
             userinfo={this.state.userinfo}
             repos={this.state.repos}
             starred={this.state.starred}
             handleSearch={(e) => this.handleSearch(e)}
+            getRepositories={(e) =>this.getRepositories(e)}
+            
         />
     }
 }
